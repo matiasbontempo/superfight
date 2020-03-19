@@ -1,0 +1,21 @@
+before_script:
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh-keyscan -H 'labs.matiasbontempo.com' >> ~/.ssh/known_hosts
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  image: node:latest
+  only:
+    - master
+  environment:
+    name: review/website-dev
+    url: http://superfight.labs.matiasbontempo.com
+  script:
+    - ssh dokku@labs.matiasbontempo.com apps:create superfight 2> /dev/null || echo "App already exists"
+    - ssh dokku@labs.matiasbontempo.com letsencrypt superfight
+    - git push dokku@labs.matiasbontempo.com:superfight HEAD:refs/heads/master --force

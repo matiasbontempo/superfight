@@ -1,0 +1,17 @@
+{
+  "name": "superfight",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "live-server ./public",
+    "eslint:init": "eslint --init"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "live-server": "^1.2.1"
+  }
+}

@@ -1,0 +1,121 @@
+@media all and (min-width: 992px) {
+  body {
+    width: 992px;
+    margin: 0px auto !important;
+  }
+}
+
+html,
+body {
+  font-family: BebasNeueRegular, arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  overflow: hidden;
+  background: #000;
+  height: 100%;;
+}
+
+body {
+  background: #F4F4F4;
+}
+
+
+/* Header */
+
+header {
+  height: 50px;
+  width: 100%;
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 16px;
+
+  align-items: center;
+
+  background: #000;
+  color: #F4F4F4;
+  font-size: 32px;
+}
+
+header #logo {
+  width: 32px;
+  height: 32px;
+}
+
+header #refresh {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  background: none;
+  border: none;
+  outline: none;
+  
+  transform: rotate(0deg);
+  transition: 400ms transform ease-in-out;
+}
+
+header #refresh:active {
+  transform: rotate(180deg);
+  transition: none;
+}
+
+
+header #refresh img {
+  width: 100%;
+}
+
+
+/* Hand */
+
+#hand {
+  background: #545454;
+  opacity: 1;
+  height: 100%;
+  padding: 5px 0px;
+  transition: 250ms;
+}
+
+#hand.flash {
+  transition: none;
+  opacity: .2;
+}
+
+#hand .card {
+  height: auto;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  font-size: 24px;
+  text-align: center;
+
+  opacity: 1;
+  transition: 0.6s;
+}
+
+#hand .card img {
+  display: block;
+  height: 24px;
+  margin: 0 auto 8px;
+}
+
+#hand .card.white {
+  background: #FFF;
+  color: #000;
+}
+
+#hand .card.black {
+  background: #000;
+  color: #F4F4F4;
+}
+
+#hand .card.hide {
+  opacity: 0;
+}
